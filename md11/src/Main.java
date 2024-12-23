@@ -19,9 +19,10 @@ import java.util.Scanner;
         String nome = sc.nextLine();
         String[] names = nome.split(",");
 
-        for (String name : names) {
-            System.out.println(name);
-        }
+        List<String> nomesPessoas = new ArrayList<>(Arrays.asList(names));
+
+        nomesPessoas.sort(null);
+        System.out.println("Lista de nomes:" + nomesPessoas);
 
         System.out.println("digite o nome dos usuarios com genero");
         String nomeG = sc.nextLine();
