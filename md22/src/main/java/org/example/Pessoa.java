@@ -1,16 +1,28 @@
 package org.example;
 
+import java.util.List;
+
 public class Pessoa {
     private  String id;
     private String nome;
-    private String nacionalidade;
+    private String sexo;
     private int idade;
 
-    public Pessoa(String id, String nome, String nacionalidade, int idade) {
+    public Pessoa() {
+    }
+
+    public Pessoa(String id, String nome, String sexo, int idade) {
         this.id = id;
         this.nome = nome;
-        this.nacionalidade = nacionalidade;
+        this.sexo = sexo;
         this.idade = idade;
+    }
+
+    public List pessoas(){
+        Pessoa pessoa1 = new Pessoa("1", "Davy", "masculino", 20);
+        Pessoa pessoa2 = new Pessoa("2", "Ana", "feminino", 25);
+        Pessoa pessoa3 = new Pessoa("3", "Lucas", "masculino", 30);
+        return List.of(pessoa1, pessoa2, pessoa3);
     }
 
     public String getId() {
@@ -29,12 +41,12 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public String getNacionalidade() {
-        return nacionalidade;
+    public String getSexo() {
+        return sexo;
     }
 
-    public void setNacionalidade(String nacionalidade) {
-        this.nacionalidade = nacionalidade;
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     public int getIdade() {
@@ -43,5 +55,15 @@ public class Pessoa {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "id='" + id + '\'' +
+                ", nome='" + nome + '\'' +
+                ", sexo='" + sexo + '\'' +
+                ", idade=" + idade +
+                '}';
     }
 }
