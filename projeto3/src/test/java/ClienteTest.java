@@ -1,3 +1,4 @@
+import org.com.davy.dao.generic.jdbc.dao.ClienteDAO;
 import org.com.davy.dao.generic.jdbc.dao.IClienteDAO;
 import org.com.davy.domain.Cliente;
 import org.junit.Test;
@@ -20,11 +21,13 @@ public class ClienteTest {
 
     @Test
     public void cadastrarTest()throws Exception{
+        clienteDAO = new ClienteDAO();
+
         Cliente cliente = new Cliente();
         cliente.setNome("Jose");
         cliente.setCodigo("10");
         Integer countCad = clienteDAO.cadastrar(cliente);
-        assertEquals(1, (int) countCad);
+        assertTrue(countCad == 1);
 
         Cliente clienteDB = clienteDAO.buscar("10");
         assertNotNull( clienteDB );
@@ -32,6 +35,6 @@ public class ClienteTest {
         assertEquals(cliente.getNome(), clienteDB.getNome());
 
         Integer countDel = clienteDAO.excluir(clienteDB);
-        assertEquals(1, (int) countDel);
+        assertTrue(countDel == 1);
     }
 }
