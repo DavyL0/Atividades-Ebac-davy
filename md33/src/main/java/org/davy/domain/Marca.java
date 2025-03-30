@@ -14,7 +14,7 @@ import jakarta.persistence.*;
  */
 
 @Entity
-@Table("TB_MARCA")
+@Table(name = "TB_MARCA")
 public class Marca {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "carro_seq")

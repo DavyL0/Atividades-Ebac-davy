@@ -32,6 +32,18 @@ public class Carro {
    @JoinColumn(name = "marca_id")
     private List<Marca> marcaList;
 
+    @ManyToOne
+    @JoinColumn(name = "acessorio_id")
+    private Acessorio acessorio;
+
+    public Acessorio getAcessorio() {
+        return acessorio;
+    }
+
+    public void setAcessorio(Acessorio acessorio) {
+        this.acessorio = acessorio;
+    }
+
     public Carro(List<Marca> marcaList) {
         this.marcaList = marcaList;
     }

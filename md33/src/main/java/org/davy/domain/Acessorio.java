@@ -2,6 +2,10 @@ package org.davy.domain;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
+import static jakarta.persistence.CascadeType.DETACH;
+
 /**
  * Project: md33
  * Package: org.davy.domain
@@ -25,9 +29,17 @@ public class Acessorio {
     @Column(name = "VALUE", nullable = false)
     private double value;
 
-    @OneToOne();
-    @JoinColumn(name = "CARRO_ID", referencedColumnName = "id")
-    private Carro carro;
+    @OneToMany(mappedBy = "CARRO")
+    @JoinColumn(name = "carro_id")
+    private List<Carro> carrosList;
+
+    public List<Carro> getCarrosList() {
+        return carrosList;
+    }
+
+    public void setCarrosList(List<Carro> carrosList) {
+        this.carrosList = carrosList;
+    }
 
     public Acessorio() {
     }
@@ -56,11 +68,4 @@ public class Acessorio {
         this.value = value;
     }
 
-    public Carro getCarro() {
-        return carro;
-    }
-
-    public void setCarro(Carro carro) {
-        this.carro = carro;
-    }
 }

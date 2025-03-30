@@ -1,5 +1,10 @@
 package org.davy.dao;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import org.davy.domain.Carro;
+
 /**
  * Project: md33
  * Package: org.davy.dao
@@ -10,5 +15,19 @@ package org.davy.dao;
  * Time: 17:59
  * <p>
  */
-public class CarroDao {
+public class CarroDao implements ICarroDao {
+    @Override
+    public Carro cadastrarCarro(Carro carro) {
+        EntityManagerFactory entityManagerFactory =
+                Persistence.createEntityManagerFactory("md32");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(carro);
+        entityManager.getTransaction().commit();
+
+        entityManager.close();
+        entityManagerFactory.close();
+        return carro;
+    }
 }

@@ -1,5 +1,7 @@
 package org.davy.dao;
 
+import org.davy.domain.Acessorio;
+
 /**
  * Project: md33
  * Package: org.davy.dao
@@ -10,4 +12,5 @@ package org.davy.dao;
  * Time: 18:00
  * <p>
  */public interface IAcessorioDao {
+    Acessorio cadastrarAcessorio(Acessorio acessorio);
 }

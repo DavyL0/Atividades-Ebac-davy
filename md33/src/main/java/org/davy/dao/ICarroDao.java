@@ -1,5 +1,7 @@
 package org.davy.dao;
 
+import org.davy.domain.Carro;
+
 /**
  * Project: md33
  * Package: org.davy.dao
@@ -11,4 +13,5 @@ package org.davy.dao;
  * <p>
  */
 public interface ICarroDao {
+    Carro cadastrarCarro(Carro carro);
 }

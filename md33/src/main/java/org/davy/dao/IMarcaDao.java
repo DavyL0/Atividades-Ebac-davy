@@ -1,5 +1,7 @@
 package org.davy.dao;
 
+import org.davy.domain.Marca;
+
 /**
  * Project: md33
  * Package: org.davy.dao
@@ -10,5 +12,6 @@ package org.davy.dao;
  * Time: 18:01
  * <p>
  */
-public class IMarcaDao {
+public interface IMarcaDao {
+    public Marca cadastrarMarca(Marca marca);
 }
