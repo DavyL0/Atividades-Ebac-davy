@@ -1,5 +1,10 @@
 package dao;
 
+import dao.generic.IGenericDAO;
+import domain.Aluno;
+
+import java.util.List;
+
 /**
  * Project: projeto5-crudfly
  * Package: dao
@@ -10,5 +15,7 @@ package dao;
  * Time: 09:11
  * <p>
  */
-public interface IAlunoDAO {
+public interface IAlunoDAO extends IGenericDAO<Aluno, Long> {
+
+    List<Aluno> filtrarAlunos(String query);
 }
