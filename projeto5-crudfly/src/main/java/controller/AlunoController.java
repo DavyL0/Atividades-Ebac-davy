@@ -34,7 +34,6 @@ public class AlunoController implements Serializable {
 
     private String telMask;
 
-    @PostConstruct
     public void init() {
         try {
             this.isUpdate = false;
@@ -91,7 +90,7 @@ public class AlunoController implements Serializable {
 
     private void removerCaracteresInvalidos() {
         Long cpf = Long.valueOf(ReplaceUtils.replace(getCpfMask(), ".", "-"));
-        this.aluno.setCpf(cpf);
+        this.aluno.setCpf(String.valueOf(cpf));
 
         Long tel = Long.valueOf(ReplaceUtils.replace(getTelMask(), "(", ")", " ", "-"));
         this.aluno.setTel(tel);

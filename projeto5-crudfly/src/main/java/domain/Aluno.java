@@ -71,4 +71,7 @@ public class Aluno implements Persistente {
     public Long getId() {
         return id;
     }
+
+    public void setTel(Long tel) {
+    }
 }
