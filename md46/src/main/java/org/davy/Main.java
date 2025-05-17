@@ -12,11 +12,14 @@ package org.davy;
  */
 public class Main {
     public static void main(String[] args) {
-        Recursivo recursivo = new Recursivo();
+        Fatorial fatorial = new Fatorial();
+        Fibonacci fibonacci = new Fibonacci();
         int n1 = 3;
         int n2 = 5;
 
-        System.out.println(Recursivo.encontraElemento(n1)
-        +" " + Recursivo.encontraElemento(n2));
+        System.out.println("Fatorial : " +Fatorial.encontraElemento(n1)
+        +" " + Fatorial.encontraElemento(n2));
+
+        System.out.println("Fibonacci : "+ Fibonacci.encontraElemento(n1));
     }
 }

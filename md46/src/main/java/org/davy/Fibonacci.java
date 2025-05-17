@@ -8,31 +8,32 @@ import java.util.Arrays;
  * <p>
  * User: MegaD
  * Email: davylopes866@gmail.com
- * Date: 16/05/2025
- * Time: 21:24
+ * Date: 17/05/2025
+ * Time: 09:15
  * <p>
  */
-public class Recursivo {
+public class Fibonacci {
     private static int MAX = 100;
     private static final int[] elements = new int[MAX];
 
-
     static {
         Arrays.fill(elements, -1);
-        elements[0] = 1;
-        elements[1] = 1;
     }
-
     public static int encontraElemento(int n) {
-        return fatorial(n);
+
+        return fibi(n);
     }
 
-    private static int fatorial(int n) {
-        if (elements[n] != -1) {
-            return  elements[n];
-        }
+    private static int fibi(int n) {
+        if (elements[n] == -1) {
+            if(n <= 1){
+                return  elements[n];
+            }else {
+            elements[n] = fibi(n -1) + fibi(n -2);
 
-        elements[n] = n * fatorial(n -1);
+            }
+        }
         return elements[n];
+
     }
 }
